@@ -3,7 +3,7 @@
 ## Windows
 - py -3 -m venv venv
 - venv\Scripts\activate
-- pip install Flask
+- pip install -r requirements.txt
 - set FLASK_APP=flask_app.py
 - flask init-db
 - flask run
@@ -11,7 +11,7 @@
 ## Linux/Mac
 - python3 -m venv venv
 - . venv/bin/activate
-- pip install Flask
+- pip install -r requirements.txt
 - export FLASK_APP=flask_app.py
 - flask init-db
 - flask run
@@ -20,17 +20,17 @@
 
 From the [a2hosting article](https://www.a2hosting.com/kb/developer-corner/python/installing-and-configuring-flask-on-linux-shared-hosting)
 
-### Init DB
-- source ~/virtualenv/flaskapp/3.5/<python_version>/activate
+### Installation
 - cd <app_dir>
-- pip install Flask
+- source ~/virtualenv/sportscars-api/3.5/bin/activate
+- pip install -r requirements.txt
 - export FLASK_APP=flask_app.py
 - export LC_ALL=en_US.utf-8
 - flask init-db
 
 ### Update DB
-- source ~/virtualenv/flaskapp/3.5/<python_version>/activate
 - cd <app_dir>
+- source ~/virtualenv/sportscars-api/3.5/bin/activate
 - export FLASK_APP=flask_app.py
 - export LC_ALL=en_US.utf-8
 - flask init-db
