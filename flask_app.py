@@ -45,8 +45,8 @@ def cars():
 
 @app.route('/')
 def brandsModelsCars():
-    args = []
-    for i in range(0, 14):
+    args = list(range(15))
+    for i in range(0, 15):
         args[i] = randrange(1, 2147, 1)
     cursor = get_db().cursor()
     cursor.execute("""
@@ -54,8 +54,8 @@ def brandsModelsCars():
         from car 
         inner join model on car.model_id = model.id 
         inner join brand on brand.id = model.brand_id 
-        where id = ? or id = ? or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  or id = ?  
-    """, [args])
+        where car.id = ? or car.id = ? or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  or car.id = ?  
+    """, args)
     rows = cursor.fetchall()
     result = buildBrandModelCars(rows)
     return jsonify(result)
