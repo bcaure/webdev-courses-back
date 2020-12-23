@@ -21,7 +21,7 @@ app.config.from_pyfile("config/settings.py")
 
 init_app(app)
 
-LIMIT_NUMBER = 30
+LIMIT_NUMBER = 15
 LIMIT_SQL_CLAUSE = " limit %s" % (LIMIT_NUMBER)
 
 @app.route('/brands')
@@ -58,7 +58,7 @@ def brandsModelsCars():
     args = []
 
     search = request.args.get('search')
-    order = request.args.get('order')
+    order = request.args.get('sort')
 
     if search is None and order is None:
 

@@ -17,7 +17,7 @@ def tupleToCar(tuple):
         "name": tuple[5],
         "power": tuple[6],
         "weight": tuple[7],
-        "startDate": tuple[8],
+        "year": tuple[8],
         "imageUrl": tuple[9]
     }
 
