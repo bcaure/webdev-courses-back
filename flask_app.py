@@ -18,3 +18,4 @@ app.config.from_pyfile("config/settings.py")
 init_app(app)
 
 import sportscars
+import exam
