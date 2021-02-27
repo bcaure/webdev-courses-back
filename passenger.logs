@@ -1,0 +1,91 @@
+App 912 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 912 output: [ pid=912, time=2020-12-18 13:27:15,915 ]: Exception on / [GET]
+App 912 output: Traceback (most recent call last):
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+App 912 output:     response = self.full_dispatch_request()
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 912 output:     rv = self.handle_user_exception(e)
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+App 912 output:     return cors_after_request(app.make_response(f(*args, **kwargs)))
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 912 output:     reraise(exc_type, exc_value, tb)
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+App 912 output:     raise value
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 912 output:     rv = self.dispatch_request()
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+App 912 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 912 output:   File "/home/cabe0232/sportscars-api/flask_app.py", line 100, in brandsModelsCars
+App 912 output:     cursor.execute(query, args)
+App 912 output: sqlite3.OperationalError: no such column: car.weight
+App 912 output: [ pid=912, time=2020-12-18 13:29:06,240 ]: Exception on / [GET]
+App 912 output: Traceback (most recent call last):
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+App 912 output:     response = self.full_dispatch_request()
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 912 output:     rv = self.handle_user_exception(e)
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+App 912 output:     return cors_after_request(app.make_response(f(*args, **kwargs)))
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 912 output:     reraise(exc_type, exc_value, tb)
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+App 912 output:     raise value
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 912 output:     rv = self.dispatch_request()
+App 912 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+App 912 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 912 output:   File "/home/cabe0232/sportscars-api/flask_app.py", line 100, in brandsModelsCars
+App 912 output:     cursor.execute(query, args)
+App 912 output: sqlite3.OperationalError: no such column: car.weight
+App 13735 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 13735 output: [ pid=13735, time=2020-12-18 13:48:27,688 ]: Exception on / [GET]
+App 13735 output: Traceback (most recent call last):
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+App 13735 output:     response = self.full_dispatch_request()
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 13735 output:     rv = self.handle_user_exception(e)
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+App 13735 output:     return cors_after_request(app.make_response(f(*args, **kwargs)))
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 13735 output:     reraise(exc_type, exc_value, tb)
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+App 13735 output:     raise value
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 13735 output:     rv = self.dispatch_request()
+App 13735 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+App 13735 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 13735 output:   File "/home/cabe0232/sportscars-api/flask_app.py", line 100, in brandsModelsCars
+App 13735 output:     cursor.execute(query, args)
+App 13735 output: sqlite3.OperationalError: no such column: car.weight
+App 37670 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 37670 output: [ pid=37670, time=2020-12-18 13:58:18,586 ]: Exception on / [GET]
+App 37670 output: Traceback (most recent call last):
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+App 37670 output:     response = self.full_dispatch_request()
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+App 37670 output:     rv = self.handle_user_exception(e)
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask_cors/extension.py", line 165, in wrapped_function
+App 37670 output:     return cors_after_request(app.make_response(f(*args, **kwargs)))
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+App 37670 output:     reraise(exc_type, exc_value, tb)
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+App 37670 output:     raise value
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+App 37670 output:     rv = self.dispatch_request()
+App 37670 output:   File "/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+App 37670 output:     return self.view_functions[rule.endpoint](**req.view_args)
+App 37670 output:   File "/home/cabe0232/sportscars-api/flask_app.py", line 102, in brandsModelsCars
+App 37670 output:     result = buildBrandModelCars(rows)
+App 37670 output:   File "/home/cabe0232/sportscars-api/utils.py", line 22, in buildBrandModelCars
+App 37670 output:     result = list(map(tupleToDict, tuples))
+App 37670 output:   File "/home/cabe0232/sportscars-api/utils.py", line 15, in tupleToDict
+App 37670 output:     "start_date": tuple[10]
+App 37670 output: IndexError: tuple index out of range
+App 37670 output: 
+App 829 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 8768 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 18303 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 29822 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 32333 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 14114 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']
+App 633 output: ['/home/cabe0232/sportscars-api', '/home/cabe0232/sportscars-api', '/opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python35.zip', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/plat-linux', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib64/python3.5/lib-dynload', '/opt/alt/python35/lib64/python3.5', '/opt/alt/python35/lib/python3.5', '/home/cabe0232/virtualenv/sportscars-api/3.5/lib/python3.5/site-packages']

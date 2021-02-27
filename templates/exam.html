@@ -1,0 +1,123 @@
+<!doctype html>
+<title>Examen de développement Web</title>
+<style>
+  main {
+    padding: 50px;
+  }
+  .card {
+    border: 1px solid;
+    margin: 20px 40px;
+    width: 300px; 
+  }
+  .title {
+    border-bottom: 1px solid;
+  }
+  .card > * {
+    padding: 10px;
+  }
+  table {
+    margin: 20px 40px;
+  }
+  th, td {
+    border: 1px solid;
+    padding: 10px;
+  }
+  li {
+    margin-bottom: 10px;
+  }
+</style>
+<main>
+<h1>Examen de développement Web</h1>
+<h2>Application {{ title }}</h2>
+
+<h3>Description de l'API</h3>
+<p>
+  <ul>
+    <li>URL: http://cabe0232.odns.fr/sportscars-api//exam/api/{{ code }}</li>
+    <li>Renvoie un tableau d'objets JSON</li>
+    <li>Chaque objet contient:
+      <ul>
+        <li>un libellé: "{{ columns[0] }}"</li>
+        <li>2 nombres: "{{ columns[1] }}" et "{{ columns[2] }}"</li>
+      </ul>
+    </li>
+  </ul>
+</p>
+
+<h3>Exercices</h3>
+<p>
+  <ol>
+    <li>Appelez l'API et afficher les données JSON dans un `console.log()`</li>
+
+    {% if type == 'list' %}
+    <li>Afficher ces données sous forme de liste de cartes avec ReactJS, de la même façon que nous avions une liste de voitures dans les TDs.
+    <div class="card">
+      <div class="title">{{ columns[0] }}: ...</div>
+      <div>{{ columns[1] }}: ...</div>
+      <div>{{ columns[2] }}: ...</div>
+    </div>
+    </li>
+    <li>
+      Décomposer l'application comme ceci :
+      <ol>
+        <li>la liste principale est affichée par le composant &lt;App&gt;</li>
+        <li>chaque carte est affichée par un composant &lt;Element&gt;</li>
+      </ol>
+    </li>
+    {% else %}
+    <li>Afficher ce tableau sous forme de &lt;table&gt; HTML avec ReactJS, de la même façon que le TD9 avec la liste de personnes.
+    <table>
+      <thead>
+        <tr>
+          <th>{{ columns[0] }}</th><th>{{ columns[1] }}</th><th>{{ columns[2] }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>...</td><td>...</td><td>...</td></tr>
+        <tr><td>...</td><td>...</td><td>...</td></tr>
+        <tr><td>...</td><td>...</td><td>...</td></tr>
+      </tbody>
+    </table>
+    </li>
+    <li>
+      Décomposer l'application comme ceci :
+      <ol>
+        <li>le tableau est affiché par le composant &lt;App&gt;</li>
+        <li>chaque ligne est affichée par un composant &lt;Element&gt;</li>
+      </ol>
+    </li>
+    {% endif %}
+    {% if calc == "max" %}
+    <li>Créer un bouton "Select" dans chaque composant Element
+    </li>
+    <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est transmi au composant App
+    </li>
+    <li>Cette valeur est stockée dans un state nommé "max". Il représente la valeur maximale de "{{ columns[1] }}" sélectionnée par l'utilisateur
+    </li>
+    <li>Passer cette valeur "max" au composant Element
+    </li>
+    <li>Dans les composants Element, afficher un fond bleu clair si "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
+    Sinon laisser le fond blanc.
+    Donc si on clique sur l'élément ayant "{{ columns[1] }}" la plus grande, tous les élements devraient être bleus.
+    Si on clique sur l'élément ayant "{{ columns[1] }}" la plus petite, seul cet élement devrait être bleu.
+    </li>
+    {% else %}
+    <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
+    </li>
+    <li>Appeler cette fonction pour calculer la moyenne nommée "mean" des attributs "{{ columns[2] }}"
+    </li>
+    <li>Passer à chaque composant Element cette moyenne "mean" en paramètre
+    </li>
+    <li>Dans les composants Element:
+      <ol>
+        <li>afficher un fond jaune si "{{ columns[2] }}" de l'élément courante est strictement supérieur à la moyenne "mean"</li>
+        <li>afficher un fond vert clair si "{{ columns[2] }}" est inférieur ou égale à "mean"</li>
+      </ol>
+    </li>
+    <li>Dans le composant App, trier les éléments selon "{{ columns[2] }}" par ordre croissant.
+    Donc les 1er élément devraient être verts clair et les derniers jaunes.
+    </li>
+    {% endif %}
+  </ol>
+</p>
+</main>

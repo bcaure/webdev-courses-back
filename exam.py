@@ -1,77 +1,71 @@
-from flask import jsonify, request
+from flask import jsonify, request, render_template
 from random import randrange
 from datetime import datetime
 from flask_app import app
 from init_db import get_db
 
-@app.route('/supermarket')
-def supermarket():
-    cursor = get_db().cursor()
-    cursor.execute('select * from supermarket')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+API_LIST = [
+  "supermarket",
+  "tobacco_alcoohol_consumption",
+  "rent_price",
+  "restaurant_price",
+  "grocery_price",
+  "house_price",
+  "chocolate_bars",
+  "broadway_shows",
+  "burger_king",
+  "cereals",
+]
 
-@app.route('/tobacco_alcoohol_consumption')
-def tobacco_alcoohol_consumption():
-    cursor = get_db().cursor()
-    cursor.execute('select * from tobacco_alcoohol_consumption')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+COLUMNS_LIST = [
+    ["Item", "Price_at_WinCo", "Price_at_WalMart"],
+    ["Region", "Alcohol_Percentage", "Tobacco_Percentage"],
+    ["City", "Cost_of_Living", "Rent"],
+    ["City", "Living_Cost", "Restaurant_Prices"],
+    ["City", "Cost_Of_Living", "Grocery_Prices"],
+    ["Date", "LosAngeles_Prices", "SanDiego_Prices"],
+    ["BarName", "Calories", "Sugar"],
+    ["Season", "Revenue", "TicketPrice"],
+    ["Item", "Weight", "MeatWeight"],
+    ["name", "sodium", "fiber"]
+]
 
-@app.route('/rent_price')
-def rent_price():
-    cursor = get_db().cursor()
-    cursor.execute('select * from rent_price')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+def indexOfCode(code):
+    return API_LIST.index(code)
 
-@app.route('/restaurant_price')
-def restaurant_price():
-    cursor = get_db().cursor()
-    cursor.execute('select * from restaurant_price')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+def code(number):
+    return API_LIST[number % len(API_LIST)]
 
-@app.route('/grocery_price')
-def grocery_price():
-    cursor = get_db().cursor()
-    cursor.execute('select * from grocery_price')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+def title(number):
+    api_code = code(number)
+    return api_code.replace('_', ' ').title()
 
-@app.route('/house_price')
-def house_price():
+@app.route('/exam/api/<api_code>')
+def exam(api_code):
+    columns = COLUMNS_LIST[indexOfCode(api_code)]
     cursor = get_db().cursor()
-    cursor.execute('select * from house_price')
+    cursor.execute(f'select * from {api_code}')
     rows = cursor.fetchall()
-    return jsonify(rows)
+    result = []
+    for row in rows:
+        print(columns, row)
+        result.append({
+            columns[0]: row[0],
+            columns[1]: row[1],
+            columns[2]: row[2]
+        })
+    return jsonify(result)
 
-@app.route('/chocolate_bars')
-def chocolate_bars():
-    cursor = get_db().cursor()
-    cursor.execute('select * from chocolate_bars')
-    rows = cursor.fetchall()
-    return jsonify(rows)
+@app.route('/exam/student/<student_number>')
+def student(student_number):
+    number = int(student_number)
+    api_code = code(number)
+    columns = COLUMNS_LIST[indexOfCode(api_code)]
+    type = 'list' if number % 2 == 1 else 'table'
+    calc = 'max' if number % 4 == 0 or number % 4 == 1 else 'mean'
+    print(columns)
+    return render_template('exam.html', title=title(number), type=type, code=api_code, columns=columns, calc=calc)
 
-@app.route('/broadway_shows')
-def broadway_shows():
-    cursor = get_db().cursor()
-    cursor.execute('select * from broadway_shows')
-    rows = cursor.fetchall()
-    return jsonify(rows)
 
-@app.route('/burger_king')
-def burger_king():
-    cursor = get_db().cursor()
-    cursor.execute('select * from burger_king')
-    rows = cursor.fetchall()
-    return jsonify(rows)
-
-@app.route('/cereals')
-def cereals():
-    cursor = get_db().cursor()
-    cursor.execute('select * from cereals')
-    rows = cursor.fetchall()
-    return jsonify(rows)
 
 
