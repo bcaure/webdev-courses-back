@@ -126,14 +126,14 @@
     </li>
     <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est transmi au composant App
     </li>
-    <li>Cette valeur est stockée dans un state nommé "max". Il représente la valeur maximale de "{{ columns[1] }}" sélectionnée par l'utilisateur
+    <li>Cette valeur est stockée dans un state nommé "max". Il représente la valeur maximale de l'attribut "{{ columns[1] }}" sélectionnée par l'utilisateur
     </li>
     <li>Passer cette valeur "max" au composant Element
     </li>
-    <li>Dans les composants Element, afficher un fond bleu clair si "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
+    <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
     Sinon laisser le fond blanc.
-    Donc si on clique sur l'élément ayant "{{ columns[1] }}" la plus grande, tous les élements devraient être bleus.
-    Si on clique sur l'élément ayant "{{ columns[1] }}" la plus petite, seul cet élement devrait être bleu.
+    Donc si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus grand, tous les élements devraient être bleus.
+    Si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus petit, seul cet élement devrait être bleu.
     </li>
     {% else %}
     <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
@@ -149,7 +149,7 @@
       </ol>
     </li>
     <li>Dans le composant App, trier les éléments selon "{{ columns[2] }}" par ordre croissant.
-    Donc les 1er élément devraient être verts clair et les derniers jaunes.
+    Donc les 1er éléments devraient être verts clair et les derniers jaunes.
     </li>
     {% endif %}
   </ol>
