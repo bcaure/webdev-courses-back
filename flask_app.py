@@ -19,3 +19,4 @@ init_app(app)
 
 import sportscars
 import exam
+import restaurant

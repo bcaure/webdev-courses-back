@@ -24,10 +24,13 @@ def close_db(e=None):
 def init_db():
     db = get_db()
 
-    with current_app.open_resource('sportscars.sql') as f:
-        db.executescript(f.read().decode('utf8'))
+    # with current_app.open_resource('sportscars.sql') as f:
+    #     db.executescript(f.read().decode('utf8'))
 
     with current_app.open_resource('exam.sql') as f:
+        db.executescript(f.read().decode('utf8'))
+
+    with current_app.open_resource('restaurant.sql') as f:
         db.executescript(f.read().decode('utf8'))
 
 @click.command('init-db')
