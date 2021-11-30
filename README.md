@@ -1,5 +1,7 @@
 # Quickstart
 
+If you encountered error, remove any existing `venv` folder from the project root before starting.
+
 ## Windows
 - py -3 -m venv venv
 - venv\Scripts\activate
@@ -22,7 +24,7 @@ From the [a2hosting article](https://www.a2hosting.com/kb/developer-corner/pytho
 
 ### Installation
 - cd <app_dir>
-- source ~/virtualenv/sportscars-api/3.5/bin/activate
+- source ~/virtualenv/webdev-api/3.8/bin/activate
 - pip install -r requirements.txt
 - export FLASK_APP=flask_app.py
 - export LC_ALL=en_US.utf-8
@@ -30,7 +32,7 @@ From the [a2hosting article](https://www.a2hosting.com/kb/developer-corner/pytho
 
 ### Update DB
 - cd <app_dir>
-- source ~/virtualenv/sportscars-api/3.5/bin/activate
+- source ~/virtualenv/webdev-api/3.8/bin/activate
 - export FLASK_APP=flask_app.py
 - export LC_ALL=en_US.utf-8
 - flask init-db
