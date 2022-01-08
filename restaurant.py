@@ -27,7 +27,7 @@ def menu():
 @app.route('/order', methods=['GET'])
 def get_orders():
     cursor = get_db().cursor()
-    cursor.execute("SELECT * FROM client_order")
+    cursor.execute("SELECT id, client, descr, price, datetime(date) date  FROM client_order")
     rows = cursor.fetchall()
     objects = list(map(lambda m: {"id": m[0], "client": m[1], "description": m[2], "price": m[3], "date": m[4]}, rows))
     return jsonify(objects)
