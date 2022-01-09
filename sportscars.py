@@ -29,7 +29,7 @@ def cars():
     rows = cursor.fetchall()
     return jsonify(rows)
 
-@app.route('/')
+@app.route('/sportscars')
 def brandsModelsCars():
 
     query = """
