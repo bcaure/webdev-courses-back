@@ -2,156 +2,286 @@
 <title>Examen de développement Web</title>
 <style>
   body {
-    margin: 0 auto;
-    max-width: 50em;
     font-family: "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
     color: #555;
   }
+
   h1,
   h2,
   h3,
   strong {
     color: #333;
   }
+
   .mt10 {
     margin-top: 10px;
   }
+
   .list {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
   }
+
   .card {
     border: 1px solid;
     margin: 20px 20px 20px 0;
-    width: 250px; 
+    width: 250px;
     max-width: 20em;
   }
+
   .title {
     border-bottom: 1px solid;
   }
-  .card > * {
+
+  .card>* {
     padding: 10px;
   }
+
   table {
     margin: 20px 40px;
   }
-  th, td {
+
+  th,
+  td {
     border: 1px solid;
     padding: 10px;
   }
+
   li {
     margin-bottom: 10px;
   }
 </style>
+
+{% if question2 == "max" %}
+<style>
+  .content-1 {
+    display: none;
+  }
+</style>
+{% else %}
+<style>
+  .content-2 {
+    display: none;
+  }
+  ol {
+    list-style-type: lower-alpha;
+  }
+</style>
+{% endif %}
+
+{% if question1 == "list" %}
+<style>
+  body {
+    margin: 50px;
+  }
+
+  header {
+    background-color: #555;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  header * {
+    color: white;
+  }
+
+  main {
+    display: flex;
+  }
+
+  .introduction {
+    min-width: 400px;
+    width: 600px;
+    margin-right: 50px;
+    border: 1px dotted blue;
+    padding: 15px;
+    height: auto;
+    align-self: flex-start;
+  }
+
+  .questions {
+    flex-grow: 1;
+  }
+</style>
+{% else %}
+<style>
+  body {
+    margin: 0 auto;
+    max-width: 50em;
+  }
+
+  h3 {
+    border-bottom: 1px solid #555;
+  }
+</style>
+{% endif %}
+<header>
+  <h1>Examen de développement Web</h1>
+</header>
 <main>
-<h1>Examen de développement Web</h1>
-<h2>Application {{ title }}</h2>
+  <article class="introduction">
+    <h2 class="content-1">Application "{{ title }}"</h2>
+    <h3>Description de l'API <span class="content-2">"{{ title }}"</span></h3>
+    <p>
+    <div>URL: http://cabe0232.odns.fr/sportscars-api/exam/api/{{ code }}</div>
+    <ul>
+      <li>GET: Renvoie un tableau d'objets JSON, chaque objet comporte les attributs "{{ columns[0] }}" (texte), "{{
+        columns[1] }}" (nombre) et "{{ columns[2] }}" (nombre)</li>
+      {% if question3 == "insert" %}
+      <li>POST: Prends en paramètre un objet avec "{{ columns[0] }}" comme clé unique, et les nombres "{{ columns[1]
+        }}" et "{{ columns[2] }}" (obligatoires). Cet objet sera créé côté serveur et ajouté au tableau renvoyé par
+        l'API précédente.</li>
+      {% else %}
+      <li>PUT: Modifie les attributs "{{ columns[1] }}" et "{{ columns[2] }}" pour l'objet identifié par "{{
+        columns[0] }}". La requête prends en paramètre un objet avec ces 3 attributs (obligatoires).</li>
+      {% endif %}
+      <li>Réponses de l'API: status = 200 (OK), statut = 400 (erreur décrite dans la réponse), statut = 500 (erreur
+        anormale, contacter l'enseignant)</li>
+    </ul>
+    </p>
+    </section>
+  </article>
 
-<h3>Description de l'API</h3>
-<p>
-  <ul>
-    <li>URL: http://cabe0232.odns.fr/sportscars-api/exam/api/{{ code }}</li>
-    <li>Renvoie un tableau d'objets JSON</li>
-    <li>Chaque objet contient:
-      <ul>
-        <li>un libellé: "{{ columns[0] }}"</li>
-        <li>2 nombres: "{{ columns[1] }}" et "{{ columns[2] }}"</li>
-      </ul>
-    </li>
-  </ul>
-</p>
+  <article class="questions">
+    <h3 class="content-1">Exercices</h3><h3 class="content-2">Questions</h3>
+    <p>
+    <ol>
+      {% if question1 == 'list' %}
+      <li>Appelez l'API GET et afficher ces données sous forme de liste de cartes avec ReactJS et Boostrap, de la même
+        façon qu'en TD.
+        <div class="mt10"><strong><i>{{ title }}</i></strong></div>
 
-<h3>Exercices</h3>
-<p>
-  <ol>
-    <li>Appelez l'API et afficher les données JSON dans un `console.log()`</li>
-
-    {% if type == 'list' %}
-    <li>Afficher ces données sous forme de liste de cartes avec ReactJS, de la même façon que nous avions une liste de voitures dans les TDs.
-    <div class="mt10"><strong><i>{{ title }}</i></strong></div>
-
-    <div class="list">
-      <div class="card">
-        <div class="title">{{ columns[0] }}: ...</div>
-        <div>{{ columns[1] }}: ...</div>
-        <div>{{ columns[2] }}: ...</div>
-      </div>
-      <div class="card">
-        <div class="title">{{ columns[0] }}: ...</div>
-        <div>{{ columns[1] }}: ...</div>
-        <div>{{ columns[2] }}: ...</div>
-      </div>
-      <div class="card">
-        <div class="title">{{ columns[0] }}: ...</div>
-        <div>{{ columns[1] }}: ...</div>
-        <div>{{ columns[2] }}: ...</div>
-      </div>
-    </div>
-    </li>
-    <li>
-      Décomposer l'application comme ceci :
-      <ol>
-        <li>la liste principale est affichée par le composant &lt;App&gt;</li>
-        <li>chaque carte est affichée par un composant &lt;Element&gt;</li>
-      </ol>
-    </li>
-    {% else %}
-    <li>Afficher ce tableau sous forme de &lt;table&gt; HTML avec ReactJS, de la même façon que le TD9 avec la liste de personnes.
-    <div class="mt10"><strong><i>{{ title }}</i></strong></div>
-    <table>
-      <thead>
-        <tr>
-          <th>{{ columns[0] }}</th><th>{{ columns[1] }}</th><th>{{ columns[2] }}</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>...</td><td>...</td><td>...</td></tr>
-        <tr><td>...</td><td>...</td><td>...</td></tr>
-        <tr><td>...</td><td>...</td><td>...</td></tr>
-      </tbody>
-    </table>
-    </li>
-    <li>
-      Décomposer l'application comme ceci :
-      <ol>
-        <li>le tableau est affiché par le composant &lt;App&gt;</li>
-        <li>chaque ligne est affichée par un composant &lt;Element&gt;</li>
-      </ol>
-    </li>
-    {% endif %}
-    {% if calc == "max" %}
-    <li>Créer un bouton "Select" dans chaque composant Element
-    </li>
-    <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est transmi au composant App
-    </li>
-    <li>Cette valeur est stockée dans un state nommé "max". Il représente la valeur maximale de l'attribut "{{ columns[1] }}" sélectionnée par l'utilisateur
-    </li>
-    <li>Passer cette valeur "max" au composant Element
-    </li>
-    <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
-    Sinon laisser le fond blanc.
-    Donc si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus grand, tous les élements devraient être bleus.
-    Si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus petit, seul cet élement devrait être bleu.
-    </li>
-    {% else %}
-    <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
-    </li>
-    <li>Appeler cette fonction pour calculer la moyenne nommée "mean" des attributs "{{ columns[2] }}"
-    </li>
-    <li>Passer à chaque composant Element cette moyenne "mean" en paramètre
-    </li>
-    <li>Dans les composants Element:
-      <ol>
-        <li>afficher un fond jaune si "{{ columns[2] }}" de l'élément courante est strictement supérieur à la moyenne "mean"</li>
-        <li>afficher un fond vert clair si "{{ columns[2] }}" est inférieur ou égale à "mean"</li>
-      </ol>
-    </li>
-    <li>Dans le composant App, trier les éléments selon "{{ columns[2] }}" par ordre croissant.
-    Donc les 1er éléments devraient être verts clair et les derniers jaunes.
-    </li>
-    {% endif %}
-  </ol>
-</p>
+        <div class="list">
+          <div class="card">
+            <div class="title">{{ columns[0] }}: ...</div>
+            <div>{{ columns[1] }}: ...</div>
+            <div>{{ columns[2] }}: ...</div>
+          </div>
+          <div class="card">
+            <div class="title">{{ columns[0] }}: ...</div>
+            <div>{{ columns[1] }}: ...</div>
+            <div>{{ columns[2] }}: ...</div>
+          </div>
+          <div class="card">
+            <div class="title">{{ columns[0] }}: ...</div>
+            <div>{{ columns[1] }}: ...</div>
+            <div>{{ columns[2] }}: ...</div>
+          </div>
+        </div>
+      </li>
+      <li>
+        Décomposer l'application comme ceci :
+        <ul>
+          <li>la liste principale est affichée par le composant &lt;App&gt;</li>
+          <li>chaque carte est affichée par un composant &lt;Element&gt;</li>
+        </ul>
+      </li>
+      {% else %}
+      <li>Appelez l'API GET et afficher les données sous forme de &lt;table&gt; HTML avec ReactJS et Boostrap, de la
+        même façon qu'en TD.
+        <div class="mt10"><strong><i>{{ title }}</i></strong></div>
+        <table>
+          <thead>
+            <tr>
+              <th>{{ columns[0] }}</th>
+              <th>{{ columns[1] }}</th>
+              <th>{{ columns[2] }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+            <tr>
+              <td>...</td>
+              <td>...</td>
+              <td>...</td>
+            </tr>
+          </tbody>
+        </table>
+      </li>
+      <li>
+        Décomposer l'application comme ceci :
+        <ul>
+          <li>le tableau est affiché par le composant &lt;App&gt;</li>
+          <li>chaque ligne est affichée par un composant &lt;Element&gt;</li>
+        </ul>
+      </li>
+      {% endif %}
+      {% if question2 == "max" %}
+      <li>Créer un bouton "Select" dans chaque composant Element
+      </li>
+      <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est stockée dans un state
+        nommé "max". Il représente la valeur maximale de l'attribut "{{ columns[1] }}" sélectionnée par l'utilisateur
+      </li>
+      <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
+        Sinon laisser le fond blanc.
+        Donc si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus grand, tous les élements devraient être bleus.
+        Si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus petit, seul cet élement devrait être bleu.
+      </li>
+      {% else %}
+      <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
+      </li>
+      <li>Appeler cette fonction pour calculer la moyenne nommée "mean" des attributs "{{ columns[2] }}"
+      </li>
+      <li>Dans les composants Element:
+        <ul>
+          <li>afficher un fond jaune si "{{ columns[2] }}" de l'élément courante est strictement supérieur à la moyenne "mean"</li>
+          <li>afficher un fond vert clair si "{{ columns[2] }}" est inférieur ou égale à "mean"</li>
+        </ul>
+      </li>
+      <li>Dans le composant App, trier les éléments selon "{{ columns[2] }}" par ordre croissant.
+        Donc les 1er éléments devraient être verts clair et les derniers jaunes.
+      </li>
+      {% endif %}
+      {% if question3 == "insert" %}
+      <li>Créer un bouton "Dupliquer" dans chaque composant Element
+      </li>
+      <li>Quand on clique sur ce bouton, une nouvel élément est crée dans la liste. Ses attributs "{{ columns[0] }}", "{{ columns[1] }}" et "{{ columns[2] }}" sont pré-remplis avec les valeurs de l'élément dupliqué.
+      </li>
+      <li>Pour ce nouvel élément, les 3 attributs sont modifiables par des champs "input". Le bouton "Dupliquer" est remplacé par un bouton "Valider".
+      </li>
+      <li>Lorsque l'on clique sur "Valider", une requête POST est envoyée à l'API REST POST pour créer un nouvel enregistrement.
+      </li>
+      <li>Attention : vous devez faire les contrôles suivants:
+        <ul>
+          <li>L'attribut "{{ columns[0] }}" est l'identifiant unique, donc l'utilisateur doit le modifier avant de valider le formulaire</li>
+          <li>Les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux).
+            Vous devez le signaler par un message d'erreur dans le cas contraire.</li>
+          <li>Vous n'êtes pas tenu de gérer le cas où l'utilisateur cliquerait sur "Dupliquer" ou un autre bouton avant de valider le formulaire</li>
+        </ul>
+      </li>
+      <li>Si l'enregistrement est effectué avec succès (statut 200 de l'API), alors le nouvel enregistrement doit apparaître dans la liste, non modifiable</li>
+      {% else %}
+      <li>Créer un bouton "Modifier" dans chaque composant Element
+      </li>
+      <li>Quand on clique sur ce bouton, les attributs "{{ columns[1] }}" et "{{ columns[2] }}" deviennent modifiables par des champs input.
+      </li>
+      <li>Sur cette nouvelle ligne, les attributs sont modifiables par des champs texte. Le bouton "Modifier" est remplacé par un bouton "Valider".
+      </li>
+      <li>Lorsque l'on clique sur "Valider", une requête PUT est envoyée à l'API REST suivante pour modifier l'enregistrement: http://cabe0232.odns.fr/sportscars-api/exam/api/{{ code }}
+      </li>
+      <li>Attention : les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux). Vous devez afficher un message d'erreur si ce n'est pas le cas.
+      </li>
+      <li>Dans le cas où l'utilisateur cliquerait sur "Modifier" sur la ligne X avant de valider le formulaire de la ligne Y, vous devrez :
+        <ul>
+          <li>Annuler les éventuelles modifications des attributs "{{ columns[1] }}" et "{{ columns[2] }}" la ligne X
+          </li>
+          <li>La ligne X redevient non modifiable</li>
+          <li>La ligne Y devient modifiable</li>
+        </ul>
+      </li>
+      {% endif %}
+    </ol>
+    </p>
+  </article>
 </main>
