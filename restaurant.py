@@ -3,6 +3,18 @@ from random import randrange
 from datetime import datetime
 from flask_app import app
 from init_db import get_db
+from datetime import datetime
+
+def datetime_valid(dt_str):
+    try:
+        datetime.fromisoformat(dt_str)
+    except:
+        try:
+            datetime.fromisoformat(dt_str.replace('Z', '+00:00'))
+        except:
+            return False
+        return True
+    return True
 
 LIMIT_NUMBER = 15
 LIMIT_SQL_CLAUSE = " limit %s" % (LIMIT_NUMBER)
@@ -40,6 +52,8 @@ def post_orders():
         return "You sent an invalid JSON object", 400
     if "id" not in order:
         return "You forgot to provide the 'id' attribute", 400
+    if "date" in order and not datetime_valid(order["date"]):
+        return "You sent an unexpected date format. Expected format is ISO string ('2016-12-13T21:20:37.593194+00:00Z')", 400
     con = get_db()
     cur = con.cursor()
     cur.execute("SELECT * FROM client_order WHERE id = ?", [order["id"]])
