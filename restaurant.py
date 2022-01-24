@@ -50,10 +50,18 @@ def post_orders():
     order = request.get_json(force=True, silent=True)
     if  order == None:
         return "You sent an invalid JSON object", 400
-    if "id" not in order:
-        return "You forgot to provide the 'id' attribute", 400
-    if "date" in order and not datetime_valid(order["date"]):
-        return "You sent an unexpected date format. Expected format is ISO string ('2016-12-13T21:20:37.593194+00:00Z')", 400
+    validation_errors = []
+    expected_attributes = ['id', 'date', 'description', 'price', 'client']
+    for expected_attribute in expected_attributes:
+        if expected_attribute not in order:
+            validation_errors.append(f"You forgot to provide the '{expected_attribute}' attribute.")
+    for received_attribute in order:
+        if received_attribute not in expected_attributes:
+            validation_errors.append(f"You provided the '{received_attribute}' attribute, which is not expected.")
+    if len(validation_errors) > 0:
+        return "\n".join(validation_errors), 400
+    if not datetime_valid(order["date"]):
+        return "You sent an unexpected date format. Expected format is ISO string like '2016-12-13T21:20:37.593194+00:00Z'", 400
     con = get_db()
     cur = con.cursor()
     cur.execute("SELECT * FROM client_order WHERE id = ?", [order["id"]])
