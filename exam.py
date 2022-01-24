@@ -3,6 +3,7 @@ from random import randrange
 from datetime import datetime
 from flask_app import app
 from init_db import get_db
+from common import validate_payload
 
 API_LIST = [
   "supermarket",
@@ -34,7 +35,7 @@ COLUMNS_LIST = [
     ["Departement", "Hommes", "Femmes"]
 ]
 
-def indexOfCode(code):
+def index_of_code(code):
     return API_LIST.index(code)
 
 def code(number):
@@ -46,7 +47,7 @@ def title(number):
 
 @app.route('/exam/api/<api_code>', methods=['GET'])
 def exam_get(api_code):
-    columns = COLUMNS_LIST[indexOfCode(api_code)]
+    columns = COLUMNS_LIST[index_of_code(api_code)]
     cursor = get_db().cursor()
     cursor.execute(f'select * from {api_code}')
     rows = cursor.fetchall()
@@ -62,13 +63,11 @@ def exam_get(api_code):
 
 @app.route('/exam/api/<api_code>', methods=['POST'])
 def exam_post(api_code):
-    columns = COLUMNS_LIST[indexOfCode(api_code)]
+    columns = COLUMNS_LIST[index_of_code(api_code)]
+    validation_errors = validate_payload(request, columns)
+    if len(validation_errors) > 0:
+        return "\n".join(validation_errors), 400
     order = request.get_json(force=True, silent=True)
-    if  order == None:
-        return "You sent an invalid JSON object", 400
-    for column in columns:
-        if column not in order:
-            return f'You forgot to provide the "{column}" field', 400
     con = get_db()
     cur = con.cursor()
     cur.execute(f'SELECT * FROM {api_code} WHERE {columns[0]} = ?', [order["id"]])
@@ -81,11 +80,13 @@ def exam_post(api_code):
     result = cur.rowcount
     con.commit()
     return f'{result} ROW(S) INSERTED' 
-    return jsonify(result)
 
 @app.route('/exam/api/<api_code>', methods=['PUT'])
 def exam_put(api_code):
-    columns = COLUMNS_LIST[indexOfCode(api_code)]
+    columns = COLUMNS_LIST[index_of_code(api_code)]
+    validation_errors = validate_payload(request, columns)
+    if len(validation_errors) > 0:
+        return "\n".join(validation_errors), 400
     order = request.get_json(force=True, silent=True)
     if  order == None:
         return "You sent an invalid JSON object", 400
@@ -104,13 +105,12 @@ def exam_put(api_code):
     result = cur.rowcount
     con.commit()
     return f'{result} ROW(S) UPDATED'
-    return jsonify(result)
 
 @app.route('/exam/student/<student_number>')
 def student(student_number):
     number = int(student_number)
     api_code = code(number)
-    columns = COLUMNS_LIST[indexOfCode(api_code)]
+    columns = COLUMNS_LIST[index_of_code(api_code)]
     question1 = 'list' if number % 2 == 1 else 'table'
     question2 = 'max' if number % 4 == 0 or number % 4 == 1 else 'mean'
     question3 = 'insert' if number % 8 == 0 or number % 8 == 1 or number % 8 == 2  or number % 8 == 3 else 'update'
