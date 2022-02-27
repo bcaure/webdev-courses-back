@@ -28,10 +28,10 @@ COLUMNS_LIST = [
     ["City", "Cost_Of_Living", "Grocery_Prices"],
     ["Date", "LosAngeles_Prices", "SanDiego_Prices"],
     ["BarName", "Calories", "Sugar"],
-    ["Season", "Revenue", "TicketPrice"],
-    ["Item", "Weight", "MeatWeight"],
+    ["Season", "Revenue", "Ticket_Price"],
+    ["Item", "Weight", "Meat_Weight"],
     ["Cereal", "Sodium", "Fiber"],
-    ["Month", "CDI", "Others"],
+    ["Mois", "CDI", "Autres_Contrats"],
     ["Departement", "Hommes", "Femmes"]
 ]
 
@@ -53,7 +53,6 @@ def exam_get(api_code):
     rows = cursor.fetchall()
     result = []
     for row in rows:
-        print(columns, row)
         result.append({
             columns[0]: row[0],
             columns[1]: row[1],
@@ -67,16 +66,25 @@ def exam_post(api_code):
     validation_errors = validate_payload(request, columns)
     if len(validation_errors) > 0:
         return "\n".join(validation_errors), 400
-    order = request.get_json(force=True, silent=True)
+    payload_object = request.get_json(force=True, silent=True)
+    try:
+        number1 = float(payload_object[columns[1]])
+    except:
+        return f'Field {columns[1]} is not a valid number: {payload_object[columns[1]]}', 400
+    try:
+        number2 = float(payload_object[columns[2]])
+    except:
+        return f'Field {columns[2]} is not a valid number: {payload_object[columns[2]]}', 400
+
     con = get_db()
     cur = con.cursor()
-    cur.execute(f'SELECT * FROM {api_code} WHERE {columns[0]} = ?', [order["id"]])
+    cur.execute(f'SELECT * FROM {api_code} WHERE {columns[0]} = ?', [payload_object[columns[0]]])
     rows = cur.fetchall()
     if (len(rows) > 0):
-        return f'Impossible to create a new record with identical field {columns[0]}: the value "{order[columns[0]]}" already exists', 400
+        return f'Impossible to create a new record with identical field {columns[0]}: the value "{payload_object[columns[0]]}" already exists', 400
 
     cur.execute(f"INSERT INTO {api_code}({columns[0]}, {columns[1]}, {columns[2]}) VALUES (?, ?, ?)",
-        (order[columns[0]], order[columns[1]], order[columns[2]]))
+        (payload_object[columns[0]], number1, number2))
     result = cur.rowcount
     con.commit()
     return f'{result} ROW(S) INSERTED' 
@@ -87,21 +95,25 @@ def exam_put(api_code):
     validation_errors = validate_payload(request, columns)
     if len(validation_errors) > 0:
         return "\n".join(validation_errors), 400
-    order = request.get_json(force=True, silent=True)
-    if  order == None:
-        return "You sent an invalid JSON object", 400
-    for column in columns:
-        if column not in order:
-            return f'You forgot to provide the "{column}" field', 400
+    payload_object = request.get_json(force=True, silent=True)
+    try:
+        number1 = float(payload_object[columns[1]])
+    except:
+        return f'Field {columns[1]} is not a valid number: {payload_object[columns[1]]}', 400
+    try:
+        number2 = float(payload_object[columns[2]])
+    except:
+        return f'Field {columns[2]} is not a valid number: {payload_object[columns[2]]}', 400
+
     con = get_db()
     cur = con.cursor()
-    cur.execute(f'SELECT * FROM {api_code} WHERE {columns[0]} = ?', [order["id"]])
+    cur.execute(f'SELECT * FROM {api_code} WHERE {columns[0]} = ?', [payload_object[columns[0]]])
     rows = cur.fetchall()
     if (len(rows) == 0):
-        return f'Impossible to update an existing record: no record was found with field {columns[0]}="{order[columns[0]]}"', 400
+        return f'Impossible to update an existing record: no record was found with field {columns[0]}="{payload_object[columns[0]]}"', 400
 
     cur.execute(f"UPDATE {api_code} SET {columns[1]}=?, {columns[2]}=? WHERE {columns[0]} = ?",
-        (order[columns[1]], order[columns[2]], order[columns[0]]))
+        (number1, number2, payload_object[columns[0]]))
     result = cur.rowcount
     con.commit()
     return f'{result} ROW(S) UPDATED'

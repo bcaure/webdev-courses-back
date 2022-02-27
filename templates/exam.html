@@ -125,7 +125,7 @@
     <h2 class="content-1">Application "{{ title }}"</h2>
     <h3>Description de l'API <span class="content-2">"{{ title }}"</span></h3>
     <p>
-    <div>URL: http://cabe0232.odns.fr/sportscars-api/exam/api/{{ code }}</div>
+    <div>URL: http://cabe0232.odns.fr/webdev-api/exam/api/{{ code }}</div>
     <ul>
       <li>GET: Renvoie un tableau d'objets JSON, chaque objet comporte les attributs "{{ columns[0] }}" (texte), "{{
         columns[1] }}" (nombre) et "{{ columns[2] }}" (nombre)</li>
@@ -137,7 +137,7 @@
       <li>PUT: Modifie les attributs "{{ columns[1] }}" et "{{ columns[2] }}" pour l'objet identifié par "{{
         columns[0] }}". La requête prends en paramètre un objet avec ces 3 attributs (obligatoires).</li>
       {% endif %}
-      <li>Réponses de l'API: status = 200 (OK), statut = 400 (erreur décrite dans la réponse), statut = 500 (erreur
+      <li>Réponses de l'API: status=200 (OK), status=400 (erreur décrite dans la réponse), status=500 (erreur
         anormale, contacter l'enseignant)</li>
     </ul>
     </p>
@@ -223,15 +223,14 @@
       <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est stockée dans un state
         nommé "max". Il représente la valeur maximale de l'attribut "{{ columns[1] }}" sélectionnée par l'utilisateur
       </li>
-      <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieure ou égale à "max".
+      <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieur ou égal à "max".
         Sinon laisser le fond blanc.
         Donc si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus grand, tous les élements devraient être bleus.
         Si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus petit, seul cet élement devrait être bleu.
       </li>
       {% else %}
       <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
-      </li>
-      <li>Appeler cette fonction pour calculer la moyenne nommée "mean" des attributs "{{ columns[2] }}"
+       et appeler cette fonction pour calculer la moyenne nommée "mean" des attributs "{{ columns[2] }}"
       </li>
       <li>Dans les composants Element:
         <ul>
@@ -244,41 +243,29 @@
       </li>
       {% endif %}
       {% if question3 == "insert" %}
-      <li>Créer un bouton "Dupliquer" dans chaque composant Element
+      <li>Créer un bouton "Create" en dessous de la liste des cartes. Quand on clique dessus, un formulaire doit apparaître.
       </li>
-      <li>Quand on clique sur ce bouton, une nouvel élément est crée dans la liste. Ses attributs "{{ columns[0] }}", "{{ columns[1] }}" et "{{ columns[2] }}" sont pré-remplis avec les valeurs de l'élément dupliqué.
+      <li>Ce formulaire comporte 3 champs "input" correspondant aux attributs "{{ columns[0] }}", "{{ columns[1] }}" et "{{ columns[2] }}"
       </li>
-      <li>Pour ce nouvel élément, les 3 attributs sont modifiables par des champs "input". Le bouton "Dupliquer" est remplacé par un bouton "Valider".
-      </li>
-      <li>Lorsque l'on clique sur "Valider", une requête POST est envoyée à l'API REST POST pour créer un nouvel enregistrement.
+      <li>Le bouton "Create" est remplacé par un bouton "Validate". Lorsque l'on clique sur celui-ci, une requête POST est envoyée à l'API REST pour créer un nouvel enregistrement.
       </li>
       <li>Attention : vous devez faire les contrôles suivants:
         <ul>
           <li>L'attribut "{{ columns[0] }}" est l'identifiant unique, donc l'utilisateur doit le modifier avant de valider le formulaire</li>
           <li>Les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux).
             Vous devez le signaler par un message d'erreur dans le cas contraire.</li>
-          <li>Vous n'êtes pas tenu de gérer le cas où l'utilisateur cliquerait sur "Dupliquer" ou un autre bouton avant de valider le formulaire</li>
         </ul>
       </li>
-      <li>Si l'enregistrement est effectué avec succès (statut 200 de l'API), alors le nouvel enregistrement doit apparaître dans la liste, non modifiable</li>
+      <li>Si l'enregistrement est effectué avec succès (status=200), alors le nouvel enregistrement doit apparaître dans la liste, le formulaire doit être masqué et le bouton "Create" doit être de nouveau visible</li>
+      <li>En cas d'erreur (status!=200), vous devez afficher celle-ci à l'utilisateur</li>
       {% else %}
-      <li>Créer un bouton "Modifier" dans chaque composant Element
+      <li>Créer un bouton "Modify" dans chaque composant Element
       </li>
       <li>Quand on clique sur ce bouton, les attributs "{{ columns[1] }}" et "{{ columns[2] }}" deviennent modifiables par des champs input.
       </li>
-      <li>Sur cette nouvelle ligne, les attributs sont modifiables par des champs texte. Le bouton "Modifier" est remplacé par un bouton "Valider".
-      </li>
-      <li>Lorsque l'on clique sur "Valider", une requête PUT est envoyée à l'API REST suivante pour modifier l'enregistrement: http://cabe0232.odns.fr/sportscars-api/exam/api/{{ code }}
+      <li>Le bouton "Modify" est remplacé par un bouton "Validate". Lorsque l'on clique sur celui-ci, une requête PUT est envoyée à l'API REST pour modifier l'enregistrement.
       </li>
       <li>Attention : les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux). Vous devez afficher un message d'erreur si ce n'est pas le cas.
-      </li>
-      <li>Dans le cas où l'utilisateur cliquerait sur "Modifier" sur la ligne X avant de valider le formulaire de la ligne Y, vous devrez :
-        <ul>
-          <li>Annuler les éventuelles modifications des attributs "{{ columns[1] }}" et "{{ columns[2] }}" la ligne X
-          </li>
-          <li>La ligne X redevient non modifiable</li>
-          <li>La ligne Y devient modifiable</li>
-        </ul>
       </li>
       {% endif %}
     </ol>

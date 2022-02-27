@@ -1,4 +1,4 @@
-drop table if exists supermarket; create table supermarket(Item varchar(1000), WinCo float8, WalMart float8);
+drop table if exists supermarket; create table supermarket(Item varchar(1000), Price_at_WinCo float8, Price_at_WalMart float8);
 insert into supermarket values ('Bananas (lb)', 0.42, 0.56);
 insert into supermarket values ('Red Onions (lb)', 0.58, 0.98);
 insert into supermarket values ('Mini Peeled Carrots (1 lb bag)', 0.98, 1.48);
@@ -29,7 +29,7 @@ insert into supermarket values ('Mrs. Cubbison Seasoned Croutons (6 oz) ', 0.88,
 insert into supermarket values ('Kelloggs Raisin Bran (20 oz)', 1.98, 2.50);
 insert into supermarket values ('Campbells Soup at Hand, Cream of Tomato', 1.18, 1.26);
 
-drop table if exists tobacco_alcoohol_consumption; create table tobacco_alcoohol_consumption(Region varchar(1000), Alcohol float8, Tobacco float8);
+drop table if exists tobacco_alcoohol_consumption; create table tobacco_alcoohol_consumption(Region varchar(1000), Alcohol_Percentage float8, Tobacco_Percentage float8);
 insert into tobacco_alcoohol_consumption values ('North', 6.47, 4.03);
 insert into tobacco_alcoohol_consumption values ('Yorkshire', 6.13, 3.76);
 insert into tobacco_alcoohol_consumption values ('Northeast', 6.19, 3.77);
@@ -42,7 +42,7 @@ insert into tobacco_alcoohol_consumption values ('Wales', 5.27, 3.53);
 insert into tobacco_alcoohol_consumption values ('Scotland', 6.08, 4.51);
 insert into tobacco_alcoohol_consumption values ('Northern Ireland', 4.02, 4.56);
 
-drop table if exists rent_price; create table rent_price(City varchar(1000), CostLiving float8, Rent float8);
+drop table if exists rent_price; create table rent_price(City varchar(1000), Cost_of_Living float8, Rent float8);
 insert into rent_price values ('Hamilton, Bermuda', 145.43, 110.87);
 insert into rent_price values ('Zurich, Switzerland', 141.25, 66.14);
 insert into rent_price values ('Geneva, Switzerland', 134.83, 71.7);
@@ -73,7 +73,7 @@ insert into rent_price values ('Washington, DC, United States', 91.94, 73.3);
 insert into rent_price values ('Arhus, Denmark', 91.9, 34.82);
 insert into rent_price values ('Singapore, Singapore', 91.4, 71.89);
 
-drop table if exists restaurant_price; create table restaurant_price(City varchar(1000), LivingCost float8, RestaurantPrice float8);
+drop table if exists restaurant_price; create table restaurant_price(City varchar(1000), Living_Cost float8, Restaurant_Prices float8);
 insert into restaurant_price values ('Hamilton, Bermuda', 145.43, 158.75);
 insert into restaurant_price values ('Zurich, Switzerland', 141.25, 135.76);
 insert into restaurant_price values ('Geneva, Switzerland', 134.83, 129.74);
@@ -104,7 +104,7 @@ insert into restaurant_price values ('Washington, DC, United States', 91.94, 85)
 insert into restaurant_price values ('Arhus, Denmark', 91.9, 102.82);
 insert into restaurant_price values ('Singapore, Singapore', 91.4, 64.4);
 
-drop table if exists grocery_price; create table grocery_price(City varchar(1000), CostOfLiving float8, GroceryPrice float8);
+drop table if exists grocery_price; create table grocery_price(City varchar(1000), Cost_Of_Living float8, Grocery_Prices float8);
 insert into grocery_price values ('Hamilton, Bermuda', 145.43, 143.47);
 insert into grocery_price values ('Zurich, Switzerland', 141.25, 149.86);
 insert into grocery_price values ('Geneva, Switzerland', 134.83, 138.98);
@@ -135,7 +135,7 @@ insert into grocery_price values ('Washington, DC, United States', 91.94, 92.74)
 insert into grocery_price values ('Arhus, Denmark', 91.9, 71.5);
 insert into grocery_price values ('Singapore, Singapore', 91.4, 83.64);
 
-drop table if exists house_price; create table house_price(Date varchar(1000), LosAngeles float8, SanDiego float8);
+drop table if exists house_price; create table house_price(Date varchar(1000), LosAngeles_Prices float8, SanDiego_Prices float8);
 insert into house_price values ('January 1987', 59.43, 54.79);
 insert into house_price values ('February 1987', 59.89, 55.22);
 insert into house_price values ('March 1987', 60.4, 55.49);
@@ -190,7 +190,7 @@ insert into chocolate_bars values ('Krackle', 5.1219512, 0.53658537);
 insert into chocolate_bars values ('AeroChocolateBar', 5.1777778, 0.57777778);
 insert into chocolate_bars values ('Toblerone', 5.2000000, 0.54000000);
 
-drop table if exists broadway_shows; create table broadway_shows(Season varchar(1000), Revenue float8, TicketPrice float8);
+drop table if exists broadway_shows; create table broadway_shows(Season varchar(1000), Revenue float8, Ticket_Price float8);
 insert into broadway_shows values ('1984', 209, 28.787879);
 insert into broadway_shows values ('1985', 190, 29.051988);
 insert into broadway_shows values ('1986', 208, 29.545455);
@@ -225,7 +225,7 @@ insert into broadway_shows values ('2014', 1365, 104.19847);
 insert into broadway_shows values ('2015', 1373, 103.07808);
 insert into broadway_shows values ('2016', 1449, 109.19367);
 
-drop table if exists burger_king; create table burger_king(Item varchar(1000), Weight float8, MeatWeight float8);
+drop table if exists burger_king; create table burger_king(Item varchar(1000), Weight float8, Meat_Weight float8);
 insert into burger_king values ('Hamburger', 109, 28);
 insert into burger_king values ('Cheeseburger', 121, 28);
 insert into burger_king values ('Double_Hamburger', 146, 28);
@@ -345,7 +345,7 @@ insert into cereals values ('Wheat_Chex', 230, 3);
 insert into cereals values ('Wheaties', 200, 3);
 insert into cereals values ('Wheaties_Honey_Gold', 200, 1);
 
-drop table if exists offres_emploi; create table offres_emploi(month varchar(1000), CDI float8, Others float8);
+drop table if exists offres_emploi; create table offres_emploi(Mois varchar(1000), CDI float8, Autres_Contrats float8);
 insert into offres_emploi values ('2015-1', 164840, 185860);
 insert into offres_emploi values ('2015-2', 163270, 204960);
 insert into offres_emploi values ('2015-3', 187730, 248020);
