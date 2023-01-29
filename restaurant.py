@@ -1,9 +1,8 @@
-from flask import jsonify, request
-from random import randrange
+#pylint: disable = missing-module-docstring, missing-function-docstring, line-too-long, bare-except
 from datetime import datetime
+from flask import jsonify, request
 from flask_app import app
 from init_db import get_db
-from datetime import datetime
 from common import validate_payload
 
 def datetime_valid(dt_str):
@@ -18,7 +17,7 @@ def datetime_valid(dt_str):
     return True
 
 LIMIT_NUMBER = 15
-LIMIT_SQL_CLAUSE = " limit %s" % (LIMIT_NUMBER)
+LIMIT_SQL_CLAUSE = f" limit {LIMIT_NUMBER}"
 
 @app.route('/food', methods=['GET'])
 def food():
@@ -58,20 +57,21 @@ def post_orders():
     cur = con.cursor()
     cur.execute("SELECT * FROM client_order WHERE id = ?", [order["id"]])
     rows = cur.fetchall()
-    if (len(rows) > 0):
-        return "Impossible to create the order with the id '%s': this id already exists" % order["id"], 400
+    if len(rows) > 0:
+        order_id = order["id"]
+        return f"Impossible to create the order with the id '{order_id}': this id already exists", 400
 
     cur.execute("INSERT INTO client_order(id, client, descr, price, date) VALUES (?, ?, ?, ?, ?)",
         (order["id"], order["client"], order["description"], order["price"], order["date"]))
     result = cur.rowcount
     con.commit()
-    return "%s ROW(S) INSERTED" % result 
+    return f"{result} ROW(S) INSERTED"
 
-@app.route('/order/<id>', methods=['DELETE'])
-def delete_orders(id):
+@app.route('/order/<order_id>', methods=['DELETE'])
+def delete_orders(order_id):
     con = get_db()
     cur = con.cursor()
-    cur.execute("DELETE FROM client_order WHERE id = ?", [id])
+    cur.execute("DELETE FROM client_order WHERE id = ?", [order_id])
     result = cur.rowcount
     con.commit()
-    return "%s ROW(S) DELETED" % result 
+    return f"{result} ROW(S) DELETED"
