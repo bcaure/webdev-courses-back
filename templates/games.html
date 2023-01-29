@@ -33,6 +33,7 @@
   <h1>GAMES API</h1>
 </header>
 <main>
+  <strong>Base API URL: <code>http://cabe0232.odns.fr/webdev-api</code></strong>
   <article>
     <h2>Route /games (method=GET)</h2>
     <p>Returns all games:
@@ -51,7 +52,7 @@
     </p>
   </article>
   <article>
-    <h2>Route /gamesreview (method=GET)</h2>
+    <h2>Route /games/reviews (method=GET)</h2>
     <p>
       Returns all games reviews:
       <pre>
@@ -60,6 +61,7 @@
           "id": number,
           "comment": string,
           "note": number (from 1 to 10),
+          "userName": string,
           "game_id": number
         }
       ]
@@ -67,10 +69,10 @@
     </p>
   </article>
   <article>
-    <h2>Route /gamesreview (method=POST)</h2>
+    <h2>Route /games/reviews (method=POST)</h2>
     <p>
       Creates a review for a given game
-      Mandatory fields: "comment", "note", "gameId"
+      Mandatory fields: "comment", "note", "gameId", "userName"
       <ul>
       <li>Error: return text message with error description</li>
       <li>Success: return text message "X ROW(S) INSERTED"</li>
@@ -78,7 +80,7 @@
     </p>
   </article>
   <article>
-    <h2>Route /gamesreview/<review_id> (method=DELETE)</h2>
+    <h2>Route /games/reviews/<review_id> (method=DELETE)</h2>
     <p>
       Deletes a game review
       <li>Error: return text message with error description</li>

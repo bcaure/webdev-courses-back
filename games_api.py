@@ -36,15 +36,15 @@ def get_games():
     objects = list(map(lambda m: {"id": m[0], "name": m[1], "summary": m[2], "releaseDate": m[3], "photo": m[4], "similarGames": m[5]}, rows))
     return jsonify(objects)
 
-@app.route('/gamesreview', methods=['GET'])
+@app.route('/games/reviews', methods=['GET'])
 def get_game_review():
     cursor = get_db().cursor()
     cursor.execute("SELECT * FROM game_review")
     rows = cursor.fetchall()
-    objects = list(map(lambda m: {"id": m[0], "comment": m[1], "note": m[2], "gameId": m[3]}, rows))
+    objects = list(map(lambda m: {"id": m[0], "comment": m[1], "note": m[2], "userName": m[3], "gameId": m[4]}, rows))
     return jsonify(objects)
 
-@app.route('/gamesreview', methods=['POST'])
+@app.route('/games/reviews', methods=['POST'])
 def post_game_review():
     validation_errors = validate_payload(request, ['comment', 'note', 'gameId'])
     if len(validation_errors) > 0:
@@ -57,7 +57,7 @@ def post_game_review():
     con.commit()
     return f"{result} ROW(S) INSERTED"
 
-@app.route('/gamesreview/<review_id>', methods=['DELETE'])
+@app.route('/games/reviews/<review_id>', methods=['DELETE'])
 def delete_game_review(review_id):
     con = get_db()
     cur = con.cursor()

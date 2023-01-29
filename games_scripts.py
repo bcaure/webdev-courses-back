@@ -38,11 +38,12 @@ def merge_cover_urls_to_game():
         cover_id = game.get("cover", "yyy")
         if cover_id:
             for cover_obj in cover_urls:
-                cover_id = cover_obj["id"]
-                if cover_id == cover_id:
+                cover_obj_id = cover_obj["id"]
+                if cover_id == cover_obj_id:
                     cover_url = cover_obj["url"]
                     if not cover_url.startswith("http"):
                         cover_url = f"https:{cover_url}"
+                    cover_url = cover_url.replace("t_thumb", "t_cover_big")
                     game["cover"] = cover_url
                     break
     json_result = json.dumps(games_content, sort_keys=True, indent=2, separators=(',', ': '))
@@ -55,7 +56,7 @@ def to_games_sql():
     json_content = json.load(json_file)
     json_file.close()
     sql_file = open("games.sql", "w", encoding="UTF8")
-    sql_file.write("DROP TABLE IF EXISTS games;\n")
+    sql_file.write("DROP TABLE IF EXISTS game;\n")
     sql_file.write("""CREATE TABLE game (
         id INTEGER PRIMARY KEY,
         name TEXT,
@@ -65,11 +66,12 @@ def to_games_sql():
         similar_games TEXT
     );
     \n\n""")
-    sql_file.write("DROP TABLE IF EXISTS games;\n")
+    sql_file.write("DROP TABLE IF EXISTS game_review;\n")
     sql_file.write("""CREATE TABLE game_review (
         id INTEGER PRIMARY KEY,
         comment TEXT,
         note INTEGER,
+        user_name TEXT,
         game_review INTEGER
     );
     \n\n""")
