@@ -20,3 +20,4 @@ init_app(app)
 import sportscars
 import exam
 import restaurant
+import games_api
