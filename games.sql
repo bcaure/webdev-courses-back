@@ -23,7 +23,7 @@ INSERT INTO game(id, cover, first_release_date, name, summary, similar_games)
 values(191499, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4kvz.jpg', 1653004800,'Dolmen: Day One Edition', NULL, '25311,80916,81249,86477,96217,103303,105049,105269,106987,115280'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(152336, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3gn1.jpg', 1642636800,'Tom Clancy''s Rainbow Six Extraction: Limited Edition', 'The Limited Edition includes a copy of the Rainbow Six Extraction game as well as digital content, the Obscura Pack, which includes the universal Cephal Black and Cerulean weapon skins along with the Redacted and Anagram charms.', '19164,32902,34024,38030,76263,102868,103301,105049,106805,119177'); 
+values(152336, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3gn1.jpg', 1642636800,'Tom Clancy''s Rainbow Six Extraction: Limited Edition', 'The Limited Edition includes a copy of the Rainbow Six Extraction game as well as digital content, the Obscura Pack, which includes the universal Cephal Black and Cerulean weapon skins along with the Redacted and Anagram charms.', '185245,32902,34024,38030,76263,102868,103301,105049,106805,119177'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(221074, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5lp5.jpg', 1665705600,'Stroke The Spider', 'There are many out there that are scared of spiders, and those that would never touch one.
@@ -37,18 +37,18 @@ Contents:
 Way of the Sword Costumes for Malt, Mei, Hanna, Kyle, Boron, Socks, Chick, Hack, Sheena, Jin, Wappa, and Britz (can be used during intermission and expedition)', '17613,25311,35994,36258,65827,79134,87485,103232,109339,112754'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(185245, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4a9i.jpg', NULL,'Wonder Woman', 'Single player open-world action game will introduce an original story set in the DC Universe and allow players to become Diana of Themyscira in the fight to unite her Amazon family and the humans from the modern world.', '19164,25636,37419,49428,81249,82090,100800,103303,113111,113895'); 
+values(185245, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4a9i.jpg', NULL,'Wonder Woman', 'Single player open-world action game will introduce an original story set in the DC Universe and allow players to become Diana of Themyscira in the fight to unite her Amazon family and the humans from the modern world.', '152336,152249,37419,49428,81249,82090,100800,103303,113111,113895'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(209917, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4znm.jpg', NULL,'The Football T', 'Dribble the ball to become the best football player in the world.', NULL); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(130000, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co20m6.jpg', 1593043200,'Hunting Simulator 2', 'With your hunting dog by your side, explore the Texan desert and forests of Colorado and Europe as you track down 33 animal species. Choose your gear from over 160 official weapons, accessories and clothing items (including Browning, Winchester and Bushnell).', '25311,26574,35994,76263,79134,95340,103232,105049,105269,109339'); 
+values(130000, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co20m6.jpg', 1593043200,'Hunting Simulator 2', 'With your hunting dog by your side, explore the Texan desert and forests of Colorado and Europe as you track down 33 animal species. Choose your gear from over 160 official weapons, accessories and clothing items (including Browning, Winchester and Bushnell).', '228376,26574,35994,76263,79134,95340,103232,105049,105269,109339'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(150241, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5owy.jpg', 1703980800,'Luto', 'Luto is a first person psychological horror narrative experience where you will embody a person unable to exit his own house. Finding the way to leave it will lead you through a series of paths that will challenge your senses.
 
-Explore the pain caused by the loss of a loved one, the horror of the insecurity to the deepest darkness hidden behind anxiety and depression...', '13189,25646,27266,55282,68271,87514,106992,110737,111130,120201'); 
+Explore the pain caused by the loss of a loved one, the horror of the insecurity to the deepest darkness hidden behind anxiety and depression...', '142813,185248,38782,55282,68271,87514,106992,110737,111130,120201'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(146505, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2yxt.jpg', 1619049600,'Call of Duty: Black Ops Cold War - Season Three', 'The Cold War heats up in Call of Duty: Black Ops Cold War - Season 3. Experience Verdansk in 1984 as Perseus'' brainwashing scheme is revealed. With Wraith, a cold and calculated Perseus spy joining the fray, you''re going to need plenty of backup. Fortunately, Season 3 delivers with new weaponry, Operator Skins, and Legendary Blueprints.', '32902,34024,38030,43367,76263,95340,102868,105049,106805,119177'); 
@@ -89,7 +89,7 @@ This pack includes the following content:
 • Resident Evil 7 biohazard Gold Edition
 • Resident Evil Village
 • Resident Evil Re:Verse
-• Trauma Pack', '11668,13210,25646,68271,102584,105049,109550,111130,114455,115304'); 
+• Trauma Pack', '150241,185248,25646,68271,102584,105049,109550,111130,114455,115304'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(132594, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5xyo.jpg', 1645488000,'SCP: 5K', 'SCP: 5K is an upcoming multiplayer tactical shooter title set within the SCP mythos. Succeeding the events of Tanhony''s SCP-5000 — Why?, SCP: 5K follows the Anti-Foundation Alliance''s attempts to impede the OMNICIDE: the SCP Foundation''s plot to annihilate the human race as quickly as possible, by any means necessary.', '17548,19164,47823,96217,103298,106987,109550,111130,113360,116530'); 
@@ -146,7 +146,7 @@ INSERT INTO game(id, cover, first_release_date, name, summary, similar_games)
 values(204524, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co606y.jpg', NULL,'Bread & Fred', 'Grab your best bud for help in this new co-op challenge to help two adorable penguins, Bread and Fred, reach the top of the snowy summit. Time your jumps, cling to walls and swing across gaps to see how far you can make it before you tumble all the way back down the mountain.', '20342,25646,28070,29032,55190,96217,105269,106987,111130,113360'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(27304, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co234k.jpg', 1469059200,'Ys VIII: Lacrimosa of Dana', 'Ys returns with a brand new adventure for the first time in 8 years! Adol awakens shipwrecked and stranded on a cursed island. There, he and the other shipwrecked passengers he rescues form a village to challenge fearsome beasts and mysterious ruins on the isolated island.', '22387,24426,27092,27209,28168,28309,35994,36198,55038,55199'); 
+values(27304, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co234k.jpg', 1469059200,'Ys VIII: Lacrimosa of Dana', 'Ys returns with a brand new adventure for the first time in 8 years! Adol awakens shipwrecked and stranded on a cursed island. There, he and the other shipwrecked passengers he rescues form a village to challenge fearsome beasts and mysterious ruins on the isolated island.', '28366,24426,27092,27209,28168,28309,35994,36198,55038,55199'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(222815, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5rl1.jpg', 1623715200,'Assassin''s Creed Valhalla: Mastery Challenge', 'Mastery Challenge is a free update that introduces replayable trials to test your expertise against Melee, Range, and Stealth objectives. Unlock new unique rewards as you perfect your skills, including weapons, tattoos, decorations, and more!', '26574,34155,80916,81249,96217,103303,105049,106987,115280,115653'); 
@@ -164,7 +164,7 @@ values(159120, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4olk.jpg
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(135732, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3wm7.jpg', NULL,'Dark Fracture', 'Dark Fracture is an indie psychological horror game played in first-person, targeted for early access release in 2021.
 
-Over the course of the game, the player is faced with the character’s inner chaos – witnessing the world change around him as the barrier between reality and imagination seems to crumble.', '11668,11737,18020,18225,25646,26574,28070,55984,107614,111130'); 
+Over the course of the game, the player is faced with the character’s inner chaos – witnessing the world change around him as the barrier between reality and imagination seems to crumble.', '142813,185248,18020,18225,25646,26574,28070,55984,107614,111130'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(191757, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4ovv.jpg', 1655424000,'Final Vendetta: Collector''s Edition', 'Final Vendetta is a hard-hitting action packed beat ‘em up for 1 or 2 players in the vein of classic arcade titles. Featuring stunning pixel art and a thumping soundtrack with exclusive tracks from Utah Saints! Brawl with bad dudes and tough girls as you fight through dangerous environments.
@@ -220,7 +220,7 @@ INSERT INTO game(id, cover, first_release_date, name, summary, similar_games)
 values(165316, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3nu5.jpg', 1629763200,'Destiny 2: Beyond Light - Season of the Lost', 'In Season of the Lost, players will blur the line between technology and magic to find Mara Sov''s lost Awoken as they search for answers.', '25311,52189,55038,103292,103301,103329,105049,105269,107318,113362'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(38782, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co22tg.jpg', 1497916800,'Outbreak: The New Nightmare', 'Return to the roots of co-op survival horror as you face monstrous hordes, scrounge for supplies and attempt to survive the nightmare. You have one life. Make it count!', '25311,25646,68271,80916,96217,105049,105269,106987,107318,111130'); 
+values(38782, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co22tg.jpg', 1497916800,'Outbreak: The New Nightmare', 'Return to the roots of co-op survival horror as you face monstrous hordes, scrounge for supplies and attempt to survive the nightmare. You have one life. Make it count!', '142813,185248,150241,80916,96217,105049,105269,106987,107318,111130'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(127749, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2p26.jpg', 1578960000,'Bunny Park', 'Manage your own bunny park! Give snacks and toys to your bunnies. Improve and decorate your park to increase its popularity and collect all the bunnies!', '17111,17519,29173,31515,36346,55036,55590,55689,65827,79134'); 
@@ -231,7 +231,7 @@ values(227712, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5un7.jpg
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(228376, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5uzb.jpg', 1637107200,'Firefighting Simulator: The Squad', 'With Firefighting Simulator: The Squad, you can become part of a major US city''s firefighting team and experience how it feels to fight fires.
 
-Start the siren of your fire truck, grab your hose, and fight realistic fires to save lives. Discover over 40 diverse deployment locations spread across the city inspired by the North American West Coast. Equip yourself with authentic firefighting gear such as helmets, firefighter boots, and a breathing apparatus model by well-known North American firefighting equipment manufacturers.', '17613,33603,36258,36962,51577,65827,76340,79134,107992,112754'); 
+Start the siren of your fire truck, grab your hose, and fight realistic fires to save lives. Discover over 40 diverse deployment locations spread across the city inspired by the North American West Coast. Equip yourself with authentic firefighting gear such as helmets, firefighter boots, and a breathing apparatus model by well-known North American firefighting equipment manufacturers.', '130000,33603,36258,36962,51577,65827,76340,79134,107992,112754'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(173211, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5bkh.jpg', 1632787200,'Behind Closed Doors: A Developer''s Tale', 'In Behind Closed Doors, you plays as Ethan, who works for a small indie company, trying to support his pregnant wife. He gets an unexpected phone call during the middle of the night, and is teleports to another dimension, where he has to face a series of challenges to get back to the real world.', '28070,28277,75948,81183,87514,103063,106992,110503,111130,117311'); 
@@ -253,7 +253,7 @@ values(28366, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co31e2.jpg'
 
 In this story expansion for Nioh - Dragon of the North follows William’s valiant struggle in the main game and opens up the Oshu region, where ambitious ruler Masamune Date is secretly gathering spirit stones.
 
-Encounter fearsome enemies and allies across three distinct stages, and develop William’s combat skills further with powerful new Ninjutsu, Onmyo magic and Guardian Spirits. Plus, discover legendary armor sets and weapons, including the Odachi great katana.', '19164,28168,54775,55038,55199,81249,96217,103168,103303,106987'); 
+Encounter fearsome enemies and allies across three distinct stages, and develop William’s combat skills further with powerful new Ninjutsu, Onmyo magic and Guardian Spirits. Plus, discover legendary armor sets and weapons, including the Odachi great katana.', '27304,28168,54775,55038,55199,81249,96217,103168,103303,106987'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(229482, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5x6y.jpg', 1671667200,'Valkyrie Profile: Lenneth', 'An intricate and evocative tale of fates woven by gods and mortals, steeped in Norse mythology, punctuated by groundbreaking combat, and brought to life by a soundtrack considered among gaming''s greatest. New features such as rewind function, quick save and load, visual presets, etc have been added.', NULL); 
@@ -277,7 +277,7 @@ values(169183, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3t3j.jpg
 A story-driven action adventure with a stunning visual aesthetic combining exploration with fast-paced combat. Players find and grow a team of charming spirit companions called the Rot, enhancing their abilities and creating new ways to manipulate the environment. Kena: Bridge of Spirits seamlessly blends action and narrative into an unforgettable experience. Travel with Kena, a young Spirit Guide on a quest to uncover the mysterious story surrounding the demise of the village.', '28010,28070,55199,81249,96217,101608,103303,106987,113360,134588'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(106821, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4p4u.jpg', 1652227200,'Soundfall', 'Soundfall is a dungeon crawler that combines looter-shooter action with rhythm-based gameplay. Venture out solo or with up to 4 friends locally or online. Collect loot and time your actions to the beat to become all powerful. Play the Campaign Mode, Free Play 100''s of songs or import your own music!', '19150,28309,30245,36198,47823,80916,96217,105049,105269,111130'); 
+values(106821, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4p4u.jpg', 1652227200,'Soundfall', 'Soundfall is a dungeon crawler that combines looter-shooter action with rhythm-based gameplay. Venture out solo or with up to 4 friends locally or online. Collect loot and time your actions to the beat to become all powerful. Play the Campaign Mode, Free Play 100''s of songs or import your own music!', '19150,28309,30245,25311,47823,80916,96217,105049,105269,111130'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(143100, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2ryv.jpg', 1628726400,'The Plane Effect', 'Players take on the role of Solo, a lonely office worker who''s trying to get home to his family after his last day of work. Somewhat worryingly, it seems Solo experiences some trouble remembering his family, and also has to contend with the shifting balance of space and time.', '18011,25222,25311,25646,27725,28070,80916,81275,105269,111130'); 
@@ -286,10 +286,10 @@ INSERT INTO game(id, cover, first_release_date, name, summary, similar_games)
 values(127743, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3ogi.jpg', 1630454400,'Lake', 'It''s 1986 - Meredith Weiss takes a break from her career in the big city to deliver mail in her hometown. How will she experience two weeks in beautiful Providence Oaks, with its iconic lake and quirky community? And what will she do next? It''s up to you.', '25311,26145,26574,29348,35994,79134,96217,105011,109339,115653'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(145735, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2xrz.jpg', 1630540800,'WRC 10', 'Hailed by reviewers and professional drivers, the standard-setting off-road racing simulation has been reinvented! Reach the 2021 season podium, and to celebrate the 50th anniversary of the competition, relive the highlights at the wheel of legendary cars. Never has the WRC experience been this intense! Rise to the challenge!', '27378,44178,47161,107196,114285,116136,117855,118871,119422,120126'); 
+values(145735, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co2xrz.jpg', 1630540800,'WRC 10', 'Hailed by reviewers and professional drivers, the standard-setting off-road racing simulation has been reinvented! Reach the 2021 season podium, and to celebrate the 50th anniversary of the competition, relive the highlights at the wheel of legendary cars. Never has the WRC experience been this intense! Rise to the challenge!', '145735,133807,47161,107196,114285,116136,117855,118871,119422,120126'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(152249, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co39pu.jpg', 1635206400,'Marvel''s Guardians of the Galaxy', 'Fire up a wild ride across the cosmos with a fresh take on Marvel’s Guardians of the Galaxy. In this action-adventure game, you are Star-Lord leading the unpredictable Guardians from one explosion of chaos to the next. You got this. Probably.', '1877,19164,19564,25311,55038,90099,105049,105269,107318,113114'); 
+values(152249, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co39pu.jpg', 1635206400,'Marvel''s Guardians of the Galaxy', 'Fire up a wild ride across the cosmos with a fresh take on Marvel’s Guardians of the Galaxy. In this action-adventure game, you are Star-Lord leading the unpredictable Guardians from one explosion of chaos to the next. You got this. Probably.', '185245,19164,19564,25311,55038,90099,105049,105269,107318,113114'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(165189, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co3lz3.jpg', 1628640000,'Call of Duty: Black Ops Cold War - Season Five', 'There''s a spy in our ranks and a numbers game in Verdansk. Call of Duty: Black Ops Cold War - Season 5''s offering of free content includes a first-in-the-franchise Double Agent mode in Multiplayer alongside new and classic Black Ops maps, in addition to new Zombies content and new Perks in Warzone that are set to shift the meta and more.', '19164,34024,38030,76263,83727,102868,103301,105049,106805,119177'); 
@@ -355,7 +355,7 @@ INSERT INTO game(id, cover, first_release_date, name, summary, similar_games)
 values(226090, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5un5.jpg', 1669075200,'Ping Pong Peg', 'Ping Pong Peg is an intense arcade style game full of RPG elements and strategy. As the player, you control the top and bottom paddles trying to hit all of the pegs in each level by keeping the ball in play with the bumpers. Clearing the levels allows you to upgrade the bumpers, balls, and abilities to improve your odds of beating the levels and defeating the bosses. Do you have what it takes to master the pegs?', '23195,25905,68458,78489,87150,87170,87728,90788,90965,103018'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
-values(11198, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5w0w.jpg', 1436140800,'Rocket League', 'Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition. Rocket League includes casual and competitive Online Matches, a fully-featured offline Season Mode, special “Mutators” that let you change the rules entirely, hockey and basketball-inspired Extra Modes, and more than 500 trillion possible cosmetic customization combinations.', '97,1905,3772,7331,7333,11009,19564,25076,36662,78511'); 
+values(11198, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5w0w.jpg', 1436140800,'Rocket League', 'Rocket League is a high-powered hybrid of arcade-style soccer and vehicular mayhem with easy-to-understand controls and fluid, physics-driven competition. Rocket League includes casual and competitive Online Matches, a fully-featured offline Season Mode, special “Mutators” that let you change the rules entirely, hockey and basketball-inspired Extra Modes, and more than 500 trillion possible cosmetic customization combinations.', '145735,133807,3772,7331,7333,11009,19564,25076,36662,78511'); 
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(231776, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co62ca.jpg', 1673913600,'Star Wars: Demolition', NULL, '44178,80382,103018,104983,107227,109292,233070,233073,233367,233522'); 

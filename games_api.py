@@ -46,13 +46,13 @@ def get_game_review():
 
 @app.route('/games/reviews', methods=['POST'])
 def post_game_review():
-    validation_errors = validate_payload(request, ['comment', 'note', 'gameId'])
+    validation_errors = validate_payload(request, ['comment', 'note', 'gameId', 'userName'])
     if len(validation_errors) > 0:
         return "\n".join(validation_errors), 400
     review = request.get_json(force=True, silent=True)
     con = get_db()
     cur = con.cursor()
-    cur.execute("INSERT INTO game_review(comment, note) VALUES (?, ?, ?)", (review["comment"], review["note"], review["gameId"]))
+    cur.execute("INSERT INTO game_review(comment, note, game_review, user_name) VALUES (?, ?, ?, ?)", (review["comment"], review["note"], review["gameId"], review["userName"]))
     result = cur.rowcount
     con.commit()
     return f"{result} ROW(S) INSERTED"
