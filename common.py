@@ -5,8 +5,9 @@ import jwt
 from flask import request
 from init_db import get_db
 
+#
 # Common functions
-
+#
 
 def validate_payload(the_request, expected_attributes):
     payload = the_request.get_json(force=True, silent=True)
@@ -39,7 +40,7 @@ def token_required(func):
             cursor.execute("SELECT name FROM game_user WHERE name=?", (user_name, ))
             rows = cursor.fetchall()
             if len(rows) > 0:
-                return func(*args, **kwargs)
+                return func(user_name, *args, **kwargs)
             else:
                 return '"x-access-tokens" is invalid: unknown user', 401
 
