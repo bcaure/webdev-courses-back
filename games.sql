@@ -1,23 +1,32 @@
+DROP TABLE IF EXISTS game_user;
+CREATE TABLE game_user (
+    name TEXT PRIMARY KEY,
+    password TEXT
+);
+
+/*
 DROP TABLE IF EXISTS game;
 CREATE TABLE game (
-        id INTEGER PRIMARY KEY,
-        name TEXT,
-        summary TEXT,
-        first_release_date INTEGER,
-        cover TEXT,
-        similar_games TEXT
-    );
+    id INTEGER PRIMARY KEY,
+    name TEXT,
+    summary TEXT,
+    first_release_date INTEGER,
+    cover TEXT,
+    similar_games TEXT
+);
     
 
 DROP TABLE IF EXISTS game_review;
 CREATE TABLE game_review (
-        id INTEGER PRIMARY KEY,
-        comment TEXT,
-        note INTEGER,
-        user_name TEXT,
-        game_review INTEGER
-    );
+    id INTEGER PRIMARY KEY,
+    comment TEXT,
+    note INTEGER,
+    user_name TEXT,
+    game_review INTEGER
+);
     
+
+
 
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(191499, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co4kvz.jpg', 1653004800,'Dolmen: Day One Edition', NULL, '25311,80916,81249,86477,96217,103303,105049,105269,106987,115280'); 
@@ -424,3 +433,4 @@ values(229119, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co5zca.jpg
 INSERT INTO game(id, cover, first_release_date, name, summary, similar_games) 
 values(208565, 'https://images.igdb.com/igdb/image/upload/t_cover_big/co52lk.jpg', 1660089600,'Book Quest', 'Book Quest is an action adventure RPG presented in retro pixel art style featuring cinematic cutscenes and dialogue. Throughout this medieval fantasy, gameplay alternates between top-down and side-scrolling perspectives.', '68582,81249,94772,96217,101608,103303,105049,105269,106987,113360'); 
 
+*/
