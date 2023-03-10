@@ -48,6 +48,8 @@ def get_game_review():
 @app.route('/games/reviews', methods=['POST'])
 @token_required
 def post_game_review(user_name):
+    print("xxxxx")
+    print(user_name)
     validation_errors = validate_payload(request, ['comment', 'note', 'gameId'])
     if len(validation_errors) > 0:
         return "\n".join(validation_errors), 400

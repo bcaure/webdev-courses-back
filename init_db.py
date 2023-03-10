@@ -27,14 +27,14 @@ def close_db(_e):
 def init_db_command():
     """Clear the existing data and create new tables."""
     database = get_db()
-    with current_app.open_resource('sportscars.sql') as file:
-        database.executescript(file.read().decode('utf8'))
+    # with current_app.open_resource('sportscars.sql') as file:
+    #     database.executescript(file.read().decode('utf8'))
 
-    with current_app.open_resource('exam.sql') as file:
-        database.executescript(file.read().decode('utf8'))
+    # with current_app.open_resource('exam.sql') as file:
+    #     database.executescript(file.read().decode('utf8'))
 
-    with current_app.open_resource('restaurant.sql') as file:
-        database.executescript(file.read().decode('utf8'))
+    # with current_app.open_resource('restaurant.sql') as file:
+    #     database.executescript(file.read().decode('utf8'))
 
     with current_app.open_resource('games.sql') as file:
         database.executescript(file.read().decode('utf8'))

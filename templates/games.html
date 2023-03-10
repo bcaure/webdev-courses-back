@@ -72,7 +72,8 @@
     <h2>Route /games/reviews (method=POST)</h2>
     <p>
       Creates a review for a given game
-      Mandatory fields: "comment", "note", "gameId", "userName"
+      Mandatory fields: "comment", "note", "gameId"
+      Mandatory header: x-access-tokens delivered by the signin endpoint
       <ul>
       <li>Error: return text message with error description</li>
       <li>Success: return text message "X ROW(S) INSERTED"</li>
@@ -87,4 +88,27 @@
       <li>Success: return text message "X ROW(S) DELETED"</li>
     </p>
   </article>
+  <article>
+    <h2>Route /games/signup (method=POST)</h2>
+    <p>
+      Creates a user
+      Mandatory fields: "userName", "password"
+      <ul>
+      <li>Error: return 401 status with error description</li>
+      <li>Success: return text message "X ROW(S) INSERTED"</li>
+      </ul>
+    </p>
+  </article>
+  <article>
+    <h2>Route /games/signin (method=POST)</h2>
+    <p>
+      Authenticate a user
+      Mandatory fields: "userName", "password"
+      <ul>
+      <li>Error: return 401 status with error description</li>
+      <li>Success: return JWT as a text message</li>
+      </ul>
+    </p>
+  </article>
+
 </main>
