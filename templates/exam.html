@@ -218,15 +218,13 @@
       </li>
       {% endif %}
       {% if question2 == "max" %}
-      <li>Créer un bouton "Select" dans chaque composant Element
+      <li>Ajouter un bouton "Select" dans chaque composant "Element"
       </li>
-      <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'Element courant est stockée dans un state
-        nommé "max". Il représente la valeur maximale de l'attribut "{{ columns[1] }}" sélectionnée par l'utilisateur
-      </li>
-      <li>Dans les composants Element, afficher un fond bleu clair si l'attribut "{{ columns[1] }}" de l'Element courant est inférieur ou égal à "max".
+      <li>Quand on clique sur ce bouton, l'attribut "{{ columns[1] }}" de l'élement courant est sauvegardé comme étant la borne max de "{{ columns[1] }}"</li>
+      <li>Afficher les autres éléments avec un fond bleu clair si l'attribut "{{ columns[1] }}" est inférieur ou égal à la borne max.
         Sinon laisser le fond blanc.
-        Donc si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus grand, tous les élements devraient être bleus.
-        Si on clique sur l'élément ayant l'attribut "{{ columns[1] }}" le plus petit, seul cet élement devrait être bleu.
+        Donc si on clique sur l'élément avec le plus grand "{{ columns[1] }}", tous les élements devraient être bleus.
+        Si on clique sur l'élément avec le plus petit "{{ columns[1] }}", seul cet élement devrait être bleu.
       </li>
       {% else %}
       <li>Créer une fonction qui calcul la moyenne d'une liste de nombre.
@@ -238,20 +236,29 @@
           <li>afficher un fond vert clair si "{{ columns[2] }}" est inférieur ou égale à "mean"</li>
         </ul>
       </li>
-      <li>Dans le composant App, trier les éléments selon "{{ columns[2] }}" par ordre croissant.
-        Donc les 1er éléments devraient être verts clair et les derniers jaunes.
+      <li>Dans le composant App, au dessus de la liste, ajouter 3 boutons :
+        <ul>
+          <li>Trier par {{ columns[0] }}</li>
+          <li>Trier par {{ columns[1] }}</li>
+          <li>Trier par {{ columns[2] }}</li>
+        </ul>
+        A chaque clic, les éléments seront retriés selon le champ correspondant par ordre croissant.
       </li>
       {% endif %}
       {% if question3 == "insert" %}
-      <li>Créer un bouton "Create" en dessous de la liste des cartes. Quand on clique dessus, un formulaire doit apparaître.
+      <li>Ajouter un bouton "Create" en dessous de la liste des cartes. Quand on clique dessus :
       </li>
-      <li>Ce formulaire comporte 3 champs "input" correspondant aux attributs "{{ columns[0] }}", "{{ columns[1] }}" et "{{ columns[2] }}"
+      <li>Un formulaire apparaît avec 3 champs correspondant aux attributs "{{ columns[0] }}", "{{ columns[1] }}" et "{{ columns[2] }}"
       </li>
-      <li>Le bouton "Create" est remplacé par un bouton "Validate". Lorsque l'on clique sur celui-ci, une requête POST est envoyée à l'API REST pour créer un nouvel enregistrement.
+      <li>Le bouton "Create" est masqué</li>
+      <li>Un bouton "Validate" apparaît : lorsque l'on clique sur celui-ci, une requête POST est envoyée à l'API REST pour créer un nouvel enregistrement.
+      </li>
+      <li>
+        Un bouton "Cancel" permet d'annuler l'action du bouton "Create" (masquer le formulaire et afficher le bouton "Create")
       </li>
       <li>Attention : vous devez faire les contrôles suivants:
         <ul>
-          <li>L'attribut "{{ columns[0] }}" est l'identifiant unique, donc l'utilisateur doit le modifier avant de valider le formulaire</li>
+          <li>L'attribut "{{ columns[0] }}" est l'identifiant unique, donc l'utilisateur doit être averti s'il existe déjà.</li>
           <li>Les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux).
             Vous devez le signaler par un message d'erreur dans le cas contraire.</li>
         </ul>
@@ -259,13 +266,18 @@
       <li>Si l'enregistrement est effectué avec succès (status=200), alors le nouvel enregistrement doit apparaître dans la liste, le formulaire doit être masqué et le bouton "Create" doit être de nouveau visible</li>
       <li>En cas d'erreur (status!=200), vous devez afficher celle-ci à l'utilisateur</li>
       {% else %}
-      <li>Créer un bouton "Modify" dans chaque composant Element
+      <li>Ajouter un bouton "Modify" dans chaque composant Element
       </li>
       <li>Quand on clique sur ce bouton, les attributs "{{ columns[1] }}" et "{{ columns[2] }}" deviennent modifiables par des champs input.
       </li>
       <li>Le bouton "Modify" est remplacé par un bouton "Validate". Lorsque l'on clique sur celui-ci, une requête PUT est envoyée à l'API REST pour modifier l'enregistrement.
       </li>
+      <li>
+        Un bouton "Cancel" permet d'annuler l'action du bouton "Modify" (masquer le formulaire et afficher le bouton "Modify")
+      </li>
       <li>Attention : les attributs "{{ columns[1] }}" et "{{ columns[2] }}" doivent être des nombres (entiers ou décimaux). Vous devez afficher un message d'erreur si ce n'est pas le cas.
+      </li>
+      <li>Si la modification s'est effectuée avec succès, vous devez le signaler par un message à l'utilisateur.
       </li>
       {% endif %}
     </ol>
